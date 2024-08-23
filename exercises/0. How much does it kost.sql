@@ -1,19 +1,7 @@
 -- A)
--- Kreditanvändning: 15 krediter för en 30-dagars månad.
--- Pris per kredit:  $3.90 USD.
--- Total månadskostnad: Cirka $58.50 USD.
-
-WITH compute_cost AS (
-    SELECT 
-        0.5 AS credits_per_day,
-        30 AS days_in_month,
-        3.90 AS price_per_credit
-)
-SELECT 
-    credits_per_day * days_in_month AS total_credits,
-    (credits_per_day * days_in_month) * price_per_credit AS total_cost
-FROM 
-    compute_cost;
+SELECT
+    0.5 * 30 AS total_credits,
+    (0.5 * 30) * 3.90 AS total_cost;
 
 -- B) 
 WITH compute_cost AS (
