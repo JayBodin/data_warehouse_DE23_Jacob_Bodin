@@ -31,7 +31,7 @@ if __name__ == "__main__":
         )
     )
     # print the data yielded from resource
-    print(data)
+    # print(data)
 
     # run the pipeline with your parameters
     # load_info = pipeline.run(data, table_name="netflix")
