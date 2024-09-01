@@ -3,9 +3,10 @@ import pandas as pd
 from pathlib import Path
 import os
 
+
 @dlt.resource(write_disposition="append")
 def load_snowflake_resource(file_path: str, **kwargs):
-    df = pd.read_csv(file_path, **kwargs)
+    df = pd.read_excel(file_path, **kwargs)
     yield df.to_dict(orient="records")
 
 
@@ -26,15 +27,15 @@ if __name__ == "__main__":
 
     data = list(
         load_snowflake_resource(
-            working_directory / "data" / "NetflixOriginals.csv", encoding="latin1"
+            working_directory / "exercise_data" / "iFood.xlsx"
         )
     )
     # print the data yielded from resource
     print(data)
 
     # run the pipeline with your parameters
-    load_info = pipeline.run(data, table_name="netflix")
+    # load_info = pipeline.run(data, table_name="netflix")
 
     # pretty print the information on data that was loaded
-    print(load_info)
+    # print(load_info)
     
