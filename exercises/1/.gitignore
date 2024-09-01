@@ -9,4 +9,4 @@ secrets.toml
 *.duckdb
 *.wal
 
-setup_user.sql
+/setup_user.sql
